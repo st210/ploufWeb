@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Boule de Neige</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/styles.css" media="all"/>
+    <link rel="shortcut icon" href="../../styles/img/boule-de-neige-icon.png"/>
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="navbar_top">
+            <div id="leftnav">
+                <a href="cours_list.html">
+                    <h1>Boule de Neige</h1>
+                </a>
+            </div>
+            <div id="middlenav"></div>
+            <div id="rightnav">
+                <a id="greetings" href="#" onclick="dropdown()">
+                </a>
+                <div id="dropdown" class="dropdown">
+                    <a href="#" onclick="logout()">
+                        Déconnexion
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar_bottom">
+            <ul>
+                <li><a id="active_nav" href="cours_list.html">Cours</a></li>
+                <li><a href="#">Membres</a></li>
+                <li><a href="#">Matériel</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="cours_list" class="container">
+        <h2>Cours
+            <button id="btn_add_cours" name="btn_add_cours" type="button"
+                    class="btn btn_blue btn_title" onclick="window.location.href='cours_creation.html'">
+                Ajouter un cours
+            </button>
+        </h2>
+
+        <table id="cours">
+            <tr>
+                <th>Identifiant</th>
+                <th>Nom du cours</th>
+                <th>Niveau</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Durée</th>
+            </tr>
+        </table>
+    </div>
+</main>
+<footer>© MIAGE 2020</footer>
+
+<script src="../../utils/api_client.js"></script>
+<script src="cours_list.js"></script>
+<script src="../header.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Boule de Neige</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/styles.css" media="all"/>
+    <link rel="shortcut icon" href="../../styles/img/boule-de-neige-icon.png"/>
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="navbar_top">
+            <div id="leftnav">
+                <a href="cours_list.html">
+                    <h1>Boule de Neige</h1>
+                </a>
+            </div>
+            <div id="middlenav"></div>
+            <div id="rightnav">
+                <a id="greetings" href="#" onclick="dropdown()">
+                </a>
+                <div id="dropdown" class="dropdown">
+                    <a href="#" onclick="logout()">
+                        Déconnexion
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar_bottom">
+            <ul>
+                <li><a id="active_nav" href="cours_list.html">Cours</a></li>
+                <li><a href="#">Membres</a></li>
+                <li><a href="#">Matériel</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div id="cours_creation" class="container">
+        <form id="form">
+            <h2>Création d'un cours</h2>
+            <div id="identification" class="subcontainer">
+                <h3 id="title_presentation">Identification</h3>
+                <div class="cols_2">
+                    <label for="idCours">Identifiant</label> <span class="required">*</span>
+                    <input id="idCours" name="idCours" aria-label="the course ID" type="text" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="nom">Nom du cours</label> <span class="required">*</span>
+                    <input id="nom" name="nom" aria-label="the course name" type="text" required/>
+                </div>
+            </div>
+            <div id="details" class="subcontainer">
+                <h3 id="title_details">Informations du cours</h3>
+                <div class="cols_2">
+                    <label for="niveau">Niveau</label> <span class="required">*</span>
+                    <input id="niveau" name="niveau" aria-label="the course level" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="duree">Durée</label> <span class="required">*</span>
+                    <input id="duree" name="duree" aria-label="the course duration"
+                           type="number" minlength="1" min="0" pattern="[0-9]*" step="1" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="dateCours">Date</label>
+                    <input id="dateCours" name="dateCours" aria-label="the course date" type="date"/>
+                </div>
+                <div class="cols_2">
+                    <label for="lieu">Lieu</label>
+                    <input id="lieu" name="lieu" aria-label="the course location" type="text"/>
+                </div>
+            </div>
+            <div id="btns_form" class="subcontainer">
+                <button id="btn_cancel" name="btn_cancel" aria-label="button to cancel the form"
+                        class="btn btn_black" type="button" onclick="window.location.href='cours_list.html'">
+                    Cancel
+                </button>
+                <button id="btn_submit" name="btn_submit" aria-label="button to validate and send the form"
+                        class="btn btn_blue" type="button" onclick="submitCours()">Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>© MIAGE 2020</footer>
+
+<script src="../../utils/api_client.js"></script>
+<script src="cours_creation.js"></script>
+<script src="../header.js"></script>
+</body>
+</html>

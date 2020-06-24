@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Boule de Neige</title>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css" media="all"/>
+    <link rel="shortcut icon" href="../styles/img/boule-de-neige-icon.png"/>
+</head>
+<body>
+<main>
+    <header>
+        <nav>
+            <div class="navbar_top">
+                <h1>Boule de Neige</h1>
+            </div>
+        </nav>
+    </header>
+    <div id="authent_login" class="container">
+        <div id="log" class="subcontainer">
+            <h2>Se connecter</h2>
+            <div class="cols_2">
+                <label for="login">Nom d'utilisateur</label> <span class="required">*</span>
+                <input id="login" name="login" type="text" placeholder="username" required/>
+            </div>
+            <div class="cols_2">
+                <label for="password">Mot de passe</label> <span class="required">*</span>
+                <input id="password" name="password" type="password" placeholder="password" required/>
+            </div>
+            <div class="btn_centered">
+                <button id="btn_login" name="btn_login" type="button"
+                        class="btn btn_blue" onclick="login()">Me connecter
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>© MIAGE 2020</footer>
+
+<script src="../utils/api_client.js"></script>
+<script src="authentication_login.js"></script>
+</body>
+</html>
