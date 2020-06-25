@@ -40,6 +40,14 @@ main {
     padding: 0 2rem;
 }
 
+.cols_1 {
+    padding: 0 0.3rem 1rem;
+}
+
+.cols_1 > input {
+    width: 50%;
+}
+
 .cols_2 {
     width: 50%;
     float: left;

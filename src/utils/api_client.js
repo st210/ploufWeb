@@ -12,12 +12,8 @@ function getToken(data, callback) {
 /*
     Membres
  */
-function getRoles(data, callback) {
-    ajaxGet(base_path_API_membres + "/roles", callback);
-}
-
-function createRole(roleID, roleCreation, callback) {
-    ajaxPut(base_path_API_membres + "/roles/" + roleID, roleCreation, callback);
+function createUser(username, userJSON, callback) {
+    ajaxPut(base_path_API_membres + /clients/ + username, userJSON, callback());
 }
 
 /*

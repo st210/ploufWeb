@@ -14,5 +14,5 @@ function tokenIsCreated(jsonData) {
     var token = JSON.parse(jsonData).token;
     createCookie("login", login, 3);
     createCookie("token", token, 3);
-    location.assign("cours/cours_list.html");
+    location.assign("../cours/cours_list.html");
 }

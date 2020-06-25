@@ -35,7 +35,7 @@ var lieu = document.querySelector("#lieu");
  * When: json course object is constructed
  * Then: send the object with a POST method
  */
-function createJSONCours() {
+function createJSONUser() {
     var coursJSON = {
         idCours: idCours.value,
         nom: nom.value,
@@ -48,7 +48,7 @@ function createJSONCours() {
 }
 
 function submitCours() {
-    var coursJSON = createJSONCours();
+    var coursJSON = createJSONUser();
     createCours(idCours.value, coursJSON, coursIsCreated);
 }
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Boule de Neige</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/styles.css" media="all"/>
+    <link rel="shortcut icon" href="../../styles/img/boule-de-neige-icon.png"/>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="navbar_top">
+            <div id="leftnav">
+                <a href="cours_list.html">
+                    <h1>Boule de Neige</h1>
+                </a>
+            </div>
+            <div id="middlenav"></div>
+            <div id="rightnav">
+                <a id="log_in" href="authentication_login.html">
+                    Se connecter
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div id="authentication_inscription" class="container">
+        <form id="authent_inscription">
+            <h2>S'inscrire</h2>
+            <div id="infosPersos" class="subcontainer">
+                <h3 id="title_infosPersos">Informations Personnelles</h3>
+                <div class="cols_2">
+                    <label for="nomFamille">Nom de Famille</label> <span class="required">*</span>
+                    <input id="nomFamille" name="nomFamille" type="text" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="prenom">Prénom</label> <span class="required">*</span>
+                    <input id="prenom" name="prenom" type="text" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="adresseVille">Ville</label> <span class="required">*</span>
+                    <input id="adresseVille" name="adresseVille" type="text" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="adressePays">Pays</label> <span class="required">*</span>
+                    <input id="adressePays" name="adressePays" type="text" required/>
+                </div>
+            </div>
+            <div id="infosUtilisateur" class="subcontainer">
+                <h3 id="title_infosUtilisateur">Données Utilisateur</h3>
+                <div class="cols_1">
+                    <label for="email">Email</label> <span class="required">*</span>
+                    <input id="email" name="email" type="text" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="username">Nom d'utilisateur</label> <span class="required">*</span>
+                    <input id="username" name="username" type="text" placeholder="username" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="mdp">Mot de passe</label> <span class="required">*</span>
+                    <input id="mdp" name="mdp" type="mdp" placeholder="password" required/>
+                </div>
+            </div>
+            <div id="infosPlongeur" class="subcontainer">
+                <h3 id="title_infosPlongeur">Informations Plongeur</h3>
+                <div class="cols_1">
+                    <label for="niveau">Niveau</label> <span class="required">*</span>
+                    <input id="niveau" name="niveau" aria-label="the course level"
+                           type="number" minlength="1" min="1" max="5" pattern="[0-9]*" step="1" required/>
+                </div>
+                <div class="cols_2">
+                    <label for="dateCours">Date de délivrance du Certificat d'Aptitude</label>
+                    <input id="dateCours" name="dateCours" aria-label="the course date" type="date"/>
+                </div>
+                <div class="cols_2">
+                    <label for="numLicence">Numéro de Licence</label> <span class="required">*</span>
+                    <input id="numLicence" name="numLicence" type="text" required/>
+                </div>
+            </div>
+            <div class="btn_centered">
+                <button id="btn_login" name="btn_login" type="button"
+                        class="btn btn_blue" onclick="inscription()">S'inscrire
+                </button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>© MIAGE 2020</footer>
+
+<script src="../../utils/api_client.js"></script>
+<script src="authentication_login.js"></script>
+</body>
+</html>

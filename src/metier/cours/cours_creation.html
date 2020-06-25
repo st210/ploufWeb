@@ -56,7 +56,8 @@
                 <h3 id="title_details">Informations du cours</h3>
                 <div class="cols_2">
                     <label for="niveau">Niveau</label> <span class="required">*</span>
-                    <input id="niveau" name="niveau" aria-label="the course level" required/>
+                    <input id="niveau" name="niveau" aria-label="the course level"
+                           type="number" minlength="1" min="1" max="5" pattern="[0-9]*" step="1" required/>
                 </div>
                 <div class="cols_2">
                     <label for="duree">Durée</label> <span class="required">*</span>
