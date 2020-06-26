@@ -1,13 +1,14 @@
-var base_path_API_membres = "http://localhost:10000";
-var base_path_API_cours = "http://localhost:20000";
+var base_path_API_membres = "https://localhost:10000";
+var base_path_API_cours = "https://localhost:20000";
 
 function getToken(data, callback) {
     ajaxPostAuth("http://localhost:20000/authent/tokens", data, callback);
 }
 
+/* useless now : gestion v1 without tokens */
 function authenticateUser(data)
 {
-    var token = JSON.parse(data).login + ":" + JSON.parse(data).user_pwd;
+    var token = data.login + ":" + data.user_pwd;
     var hash = btoa(token);
     return "Basic " + hash;
 }
@@ -15,8 +16,8 @@ function authenticateUser(data)
 /*
     Membres
  */
-function createUser(login, userJSON, callback) {
-    ajaxPut(base_path_API_membres + /clients/ + login, userJSON, callback());
+function createUser(userJSON, callback) {
+    ajaxPost(base_path_API_membres + "/clients", userJSON, callback());
 }
 
 function getUserRole(login, callback) {
@@ -26,11 +27,11 @@ function getUserRole(login, callback) {
 /*
     Cours
  */
-function createCours(idCours, coursCreation, callback) {
-    ajaxPut(base_path_API_cours + "/cours/" + idCours, coursCreation, callback);
+function createCours(coursCreation, callback) {
+    ajaxPost(base_path_API_cours + "/cours/", coursCreation, callback);
 }
 
-function getCours(data, callback) {
+function getCours(callback) {
     ajaxGet(base_path_API_cours + "/cours", callback);
 }
 
@@ -44,17 +45,19 @@ function getOneCours(idCours, callback) {
 function ajaxGet(url, callback) {
     var req = new XMLHttpRequest();
     req.open("GET", url);
-    req.setRequestHeader('Accept', 'application/json');
+    req.setRequestHeader('Accept', '*/*');
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     callbackRegistration(url, req, callback);
-    req.send(null);
+    req.send();
 }
 
-function ajaxPut(url, data, callback) {
+function ajaxPost(url, data, callback) {
     var req = new XMLHttpRequest();
-    req.open("PUT", url);
-    req.setRequestHeader('Accept', 'application/json');
+    req.open("POST", url);
+    req.setRequestHeader('Accept', '*/*');
     req.setRequestHeader('Content-Type', 'application/json');
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     callbackRegistration(url, req, callback);
     req.send(JSON.stringify(data));

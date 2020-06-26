@@ -6,12 +6,21 @@ function log_in() {
         login: login,
         user_pwd: user_pwd
     };
-    getToken(body, tokenIsCreated);
+
+    /* test */
+    var user = getUserRole(login);
+    var role_id = user.role_id;
+
+    //getToken(body, tokenIsCreated);
+    //tokenIsCreated(body);
+    createCookie("login", login, 3);
+    createCookie("role_id", role_id, 3);
+    location.assign("../cours/cours_list.html");
 }
 
-function tokenIsCreated(jsonData) {
-    var login = JSON.parse(jsonData).login;
-    var token = JSON.parse(jsonData).token;
+function tokenIsCreated(data) {
+    var login = data.login;
+    var token = data.token;
     var user = getUserRole(login);
     var role_id = JSON.parse(user).role_id;
 

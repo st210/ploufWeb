@@ -29,12 +29,12 @@ function createJSONUser() {
 
 function inscription() {
     var userJSON = createJSONUser();
-    createUser(login.value, userJSON, UserIsCreated);
+    createUser(userJSON, UserIsCreated);
     log_in();
 }
 
 function UserIsCreated() {
-    location.assign("cours_list.html");
+    location.assign("../cours/cours_list.html");
     alert(login.value + " user has been successfully created.");
 }
 

@@ -49,7 +49,7 @@ function createJSONUser() {
 
 function submitCours() {
     var coursJSON = createJSONUser();
-    createCours(idCours.value, coursJSON, coursIsCreated);
+    createCours(coursJSON, coursIsCreated);
 }
 
 function coursIsCreated() {
