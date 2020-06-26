@@ -22,7 +22,7 @@ function showCoursList(response) {
             + '</td><td>' + cours.niveau
             + '</td><td>' + cours.dateCours
             + '</td><td>' + cours.duree
-            + '</td><td class="btns_table"><button class="btn btn_blue">Voir</button> <button class="btn btn_black">Editer</button>'
+            + '</td><td class="btns_table"><button class="btn btn_blue" onclick="getOneCours(cours.idCours)">Voir</button>'
             + '</td></tr>');
     })
 }
