@@ -15,8 +15,12 @@ function authenticateUser(data)
 /*
     Membres
  */
-function createUser(username, userJSON, callback) {
-    ajaxPut(base_path_API_membres + /clients/ + username, userJSON, callback());
+function createUser(login, userJSON, callback) {
+    ajaxPut(base_path_API_membres + /clients/ + login, userJSON, callback());
+}
+
+function getUserRole(login, callback) {
+    ajaxGet(base_path_API_membres + "/clients/" + login, callback);
 }
 
 /*

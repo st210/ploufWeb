@@ -342,3 +342,11 @@ td, th {
     min-height: 3rem;
     font-size: 1.3rem;
 }
+
+#btn_add_cours {
+    visibility: hidden;
+}
+
+#btn_add_cours_visible {
+    visibility: visible;
+}
