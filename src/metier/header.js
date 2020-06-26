@@ -1,5 +1,5 @@
 function showUsername() {
-    var username = getCookieValueByName("login");
+    var username = getCookieValueByName("log_in");
     document.querySelector('#greetings').insertAdjacentHTML("beforeEnd",
         '<span id="username">' + username + '</span>')
 }
@@ -14,7 +14,7 @@ function dropdown() {
 }
 
 function logout() {
-    deleteCookieByName("login");
+    deleteCookieByName("log_in");
     deleteCookieByName("token");
     location.replace("../authentication_login.html");
 }

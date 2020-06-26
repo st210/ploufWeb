@@ -1,10 +1,10 @@
-function login() {
+function log_in() {
     var login = document.querySelector("#login").value;
-    var password = document.querySelector("#password").value;
+    var user_pwd = document.querySelector("#user_pwd").value;
 
     var body = {
         login: login,
-        password: password
+        user_pwd: user_pwd
     };
     getToken(body, tokenIsCreated);
 }

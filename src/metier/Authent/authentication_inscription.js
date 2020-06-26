@@ -1,14 +1,11 @@
 /* Variables from html form inputs */
-var nomFamille = document.querySelector("#nomFamille");
+var nom = document.querySelector("#nom");
 var prenom = document.querySelector("#prenom");
-var adresseVille = document.querySelector("#adresseVille");
-var adressePays = document.querySelector("#adressePays");
+var ville = document.querySelector("#ville");
+var pays = document.querySelector("#pays");
 var email = document.querySelector("#email");
-var username = document.querySelector("#username");
-var mdp = document.querySelector("#mdp");
-var niveau = document.querySelector("#niveau");
-var dateCours = document.querySelector("#dateCours");
-var numLicence = document.querySelector("#numLicence");
+var login = document.querySelector("#login");
+var user_pwd = document.querySelector("#user_pwd");
 
 /**
  * Create a user
@@ -16,19 +13,15 @@ var numLicence = document.querySelector("#numLicence");
  * When: json user object is constructed
  * Then: send the object with a POST method
  */
-/* TODO: rename certains champs comme sur BD */
 function createJSONUser() {
     var userJSON = {
-        nomFamille: nomFamille.value,
+        nom: nom.value,
         prenom: prenom.value,
-        adresseVille: adresseVille.value,
-        adressePays: adressePays.value,
+        ville: ville.value,
+        pays: pays.value,
         email: email.value,
-        username: username.value,
-        mdp: mdp.value,
-        niveau: niveau.value,
-        dateCours: dateCours.value,
-        numLicence: numLicence.value,
+        login: login.value,
+        user_pwd: user_pwd.value,
         role_id: 1
     };
     return userJSON;
@@ -36,22 +29,23 @@ function createJSONUser() {
 
 function inscription() {
     var userJSON = createJSONUser();
-    createUser(username.value, userJSON, UserIsCreated);
+    createUser(login.value, userJSON, UserIsCreated);
+    log_in();
 }
 
 function UserIsCreated() {
     location.assign("cours_list.html");
-    alert(username.value + " user has been successfully created.");
+    alert(login.value + " user has been successfully created.");
 }
 
-function login() {
-    var login = document.querySelector("#login").value;
-    var password = document.querySelector("#password").value;
-
+function log_in() {
+    var login = login.value;
+    var user_pwd = user_pwd.value;
     var body = {
         login: login,
-        password: password
+        user_pwd: user_pwd
     };
+
     getToken(body, tokenIsCreated);
 }
 

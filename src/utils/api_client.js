@@ -1,12 +1,15 @@
 var base_path_API_membres = "http://localhost:10000";
 var base_path_API_cours = "http://localhost:20000";
 
-
-/*
-    TODO : voir si possible de générer un token côté back, sinon générer aléatoirement par fonction http
- */
 function getToken(data, callback) {
-    ajaxPostAuth("http://localhost/authent/tokens", data, callback);
+    ajaxPostAuth("http://localhost:20000/authent/tokens", data, callback);
+}
+
+function authenticateUser(data)
+{
+    var token = JSON.parse(data).login + ":" + JSON.parse(data).user_pwd;
+    var hash = btoa(token);
+    return "Basic " + hash;
 }
 
 /*
@@ -53,15 +56,16 @@ function ajaxPut(url, data, callback) {
     req.send(JSON.stringify(data));
 }
 
-function ajaxPostAuth(url, jsonData, callback) {
+function ajaxPostAuth(url, data, callback) {
     var req = new XMLHttpRequest();
     req.open("POST", url);
     req.withCredentials = true;
     req.setRequestHeader('Accept', 'application/json');
     req.setRequestHeader('Content-Type', 'application/json');
+    req.setRequestHeader("Authorization", authenticateUser(data));
 
     callbackRegistration(url, req, callback);
-    req.send(JSON.stringify(jsonData));
+    req.send(JSON.stringify(data));
 }
 
 function callbackRegistration(url, req, callback) {
