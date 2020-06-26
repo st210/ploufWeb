@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Boule de Neige</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/styles.css" media="all"/>
+    <link rel="shortcut icon" href="../../styles/img/boule-de-neige-icon.png"/>
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="navbar_top">
+            <div id="leftnav">
+                <a href="cours_list.html">
+                    <h1>Boule de Neige</h1>
+                </a>
+            </div>
+            <div id="middlenav"></div>
+            <div id="rightnav">
+                <a id="greetings" href="#" onclick="dropdown()">
+                </a>
+                <div id="dropdown" class="dropdown">
+                    <a href="#" onclick="logout()">
+                        Déconnexion
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar_bottom">
+            <ul>
+                <li><a id="active_nav" href="cours_list.html">Cours</a></li>
+                <li><a href="#">Membres</a></li>
+                <li><a href="#">Matériel</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="cours_voir" class="container">
+        <h2>Détails du cours</h2>
+        <div id="thisCours"></div>
+
+        <button id="btn_cancel" name="btn_cancel" aria-label="button to cancel the view"
+                class="btn btn_black" type="button" onclick="window.location.href='cours_list.html'">
+            Retour
+        </button>
+    </div>
+</main>
+<footer>© MIAGE 2020</footer>
+
+<script src="../../utils/api_client.js"></script>
+<script src="cours_voir.js"></script>
+<script src="../header.js"></script>
+</body>
+</html>
